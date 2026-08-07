@@ -59,12 +59,27 @@
     </section>
 
     <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 fade-in-up">
+            <div class="w-full sm:w-72">
+                <input type="text" id="blogSearch" placeholder="Buscar artículos..." class="w-full px-4 py-3 rounded-xl border border-white/10 bg-space-dark text-white outline-none focus:ring-2 focus:ring-pastel-purple placeholder-slate-500">
+            </div>
+            <div class="flex flex-wrap items-center gap-2" id="blogFilters">
+                <button data-filter="todas" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/10 text-slate-300 hover:border-pastel-purple hover:text-white transition-all">Todas</button>
+                <button data-filter="IA" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/10 text-slate-300 hover:border-pastel-purple hover:text-white transition-all">IA</button>
+                <button data-filter="Tecnología" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/10 text-slate-300 hover:border-pastel-purple hover:text-white transition-all">Tecnología</button>
+                <button data-filter="E-commerce" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/10 text-slate-300 hover:border-pastel-purple hover:text-white transition-all">E-commerce</button>
+                <button data-filter="WhatsApp" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/10 text-slate-300 hover:border-pastel-purple hover:text-white transition-all">WhatsApp</button>
+                <button data-filter="Ciberseguridad" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/10 text-slate-300 hover:border-pastel-purple hover:text-white transition-all">Ciberseguridad</button>
+                <button data-filter="PYME" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/10 text-slate-300 hover:border-pastel-purple hover:text-white transition-all">PYME</button>
+            </div>
+        </div>
+        <p id="blogEmpty" class="hidden text-center text-slate-500 py-16">No se encontraron artículos.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost1">
-                <div class="h-40 bg-gradient-to-br from-pastel-purple/30 to-pastel-blue/30 flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-space-dark/40"></div>
-                    <svg class="w-16 h-16 text-pastel-purple/80 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
+            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost1" data-category="IA">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="img/blog/post1.svg" alt="IA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-space-dark/30"></div>
                 </div>
                 <div class="p-6">
                     <span class="text-xs text-pastel-purple font-medium">IA · Agosto 2026</span>
@@ -74,10 +89,10 @@
                 </div>
             </article>
 
-            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost2" style="transition-delay: 100ms;">
-                <div class="h-40 bg-gradient-to-br from-pastel-green/30 to-pastel-blue/30 flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-space-dark/40"></div>
-                    <svg class="w-14 h-14 text-pastel-green/80 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost2" style="transition-delay: 100ms;" data-category="Tecnología">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="img/blog/post2.svg" alt="Tecnología" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-space-dark/30"></div>
                 </div>
                 <div class="p-6">
                     <span class="text-xs text-pastel-green font-medium">Tecnología · Agosto 2026</span>
@@ -87,15 +102,54 @@
                 </div>
             </article>
 
-            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost3" style="transition-delay: 200ms;">
-                <div class="h-40 bg-gradient-to-br from-pastel-pink/30 to-pastel-yellow/30 flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-space-dark/40"></div>
-                    <svg class="w-14 h-14 text-pastel-pink/80 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost3" style="transition-delay: 200ms;" data-category="E-commerce">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="img/blog/post3.svg" alt="E-commerce" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-space-dark/30"></div>
                 </div>
                 <div class="p-6">
                     <span class="text-xs text-pastel-pink font-medium">E-commerce · Agosto 2026</span>
                     <h3 class="text-lg font-bold text-white mt-2 mb-2 group-hover:text-pastel-pink transition-colors">E-commerce en Costa Rica crece 34%</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">El mercado digital tico rompe récords impulsado por Sinpe Móvil.</p>
+                    <span class="inline-block mt-3 text-xs text-pastel-pink font-medium">Leer más →</span>
+                </div>
+            </article>
+
+            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost4" data-category="WhatsApp">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="img/blog/post4.svg" alt="WhatsApp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-space-dark/30"></div>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-pastel-blue font-medium">WhatsApp · Agosto 2026</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-2 group-hover:text-pastel-blue transition-colors">WhatsApp Business: vende más sin pagar publicidad</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Catálogos, respuestas automáticas y pedidos directos desde el chat.</p>
+                    <span class="inline-block mt-3 text-xs text-pastel-blue font-medium">Leer más →</span>
+                </div>
+            </article>
+
+            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost5" style="transition-delay: 100ms;" data-category="Ciberseguridad">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="img/blog/post5.svg" alt="Ciberseguridad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-space-dark/30"></div>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-pastel-yellow font-medium">Ciberseguridad · Agosto 2026</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-2 group-hover:text-pastel-yellow transition-colors">5 errores de seguridad que cometen las PYMES</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Protege tu tienda en línea de los ataques más comunes.</p>
+                    <span class="inline-block mt-3 text-xs text-pastel-yellow font-medium">Leer más →</span>
+                </div>
+            </article>
+
+            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost6" style="transition-delay: 200ms;" data-category="PYME">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="img/blog/post6.svg" alt="PYME" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-space-dark/30"></div>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-pastel-pink font-medium">PYME · Agosto 2026</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-2 group-hover:text-pastel-pink transition-colors">Cómo vender online sin tener redes sociales grandes</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Estrategias accesibles para PYMES que están empezando.</p>
                     <span class="inline-block mt-3 text-xs text-pastel-pink font-medium">Leer más →</span>
                 </div>
             </article>

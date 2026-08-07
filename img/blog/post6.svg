@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f9a8d4"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="320" fill="#0B0F19"/>
+  <rect width="720" height="320" fill="url(#g)" opacity="0.9"/>
+  <circle cx="90" cy="70" r="130" fill="#ffffff" opacity="0.08"/>
+  <circle cx="640" cy="280" r="160" fill="#ffffff" opacity="0.08"/>
+  <circle cx="560" cy="60" r="50" fill="#ffffff" opacity="0.1"/>
+  <text x="360" y="200" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="110" font-weight="800" fill="#0B0F19" opacity="0.35">PY</text>
+</svg>
