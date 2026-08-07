@@ -181,7 +181,7 @@
     <footer class="mt-20 border-t border-white/10 py-8 text-center text-slate-500 text-sm relative z-10">
         <p>© 2026 Jifftry. Explorando el comercio del futuro en Costa Rica.</p>
         <p class="mt-2">
-            <a href="#" onclick="openPrivacyModal(); return false;" class="text-pastel-blue hover:text-white transition-colors">Política de Privacidad</a>
+            <a href="#" id="linkPrivacyFooter" class="text-pastel-blue hover:text-white transition-colors">Política de Privacidad</a>
         </p>
     </footer>
 
@@ -230,7 +230,7 @@
                     <label class="flex items-start gap-2 cursor-pointer">
                         <input type="checkbox" id="consentimiento" required class="mt-1 w-4 h-4 rounded accent-pastel-purple">
                         <span class="text-xs text-slate-400 leading-relaxed">
-                            Acepto la <a href="#" onclick="openPrivacyModal(); return false;" class="text-pastel-blue hover:text-white underline">Política de Privacidad</a> y autorizo el tratamiento de mis datos personales conforme a la Ley 8968 de Costa Rica.
+                            Acepto la <a href="#" id="linkPrivacyForm" class="text-pastel-blue hover:text-white underline">Política de Privacidad</a> y autorizo el tratamiento de mis datos personales conforme a la Ley 8968 de Costa Rica.
                         </span>
                     </label>
 
@@ -317,8 +317,8 @@
 
     <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-50 bg-space-dark/95 backdrop-blur-md border-t border-white/10 px-4 py-4 hidden">
         <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-300">
-            <p class="text-center sm:text-left">Este sitio utiliza cookies técnicas esenciales para su funcionamiento. Al continuar navegando aceptás nuestra <a href="#" onclick="openPrivacyModal(); return false;" class="text-pastel-blue hover:text-white underline">Política de Privacidad</a>.</p>
-            <button onclick="acceptCookies()" class="shrink-0 bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark font-bold px-6 py-2 rounded-full transition-all text-xs">Aceptar</button>
+            <p class="text-center sm:text-left">Este sitio utiliza cookies técnicas esenciales para su funcionamiento. Al continuar navegando aceptás nuestra <a href="#" id="linkPrivacyCookie" class="text-pastel-blue hover:text-white underline">Política de Privacidad</a>.</p>
+            <button id="btnAcceptCookies" class="shrink-0 bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark font-bold px-6 py-2 rounded-full transition-all text-xs">Aceptar</button>
         </div>
     </div>
 

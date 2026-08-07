@@ -307,13 +307,29 @@
     // ── Cookie Consent Banner ───────────────────
     var cookieBanner = document.getElementById('cookieBanner');
 
-    window.acceptCookies = function() {
+    function acceptCookies() {
         localStorage.setItem('jifftry_cookies_accepted', 'true');
         cookieBanner.classList.add('opacity-0');
         setTimeout(function() {
             cookieBanner.classList.add('hidden');
         }, 300);
-    };
+    }
+
+    document.getElementById('btnAcceptCookies').addEventListener('click', acceptCookies);
+
+    // ── Privacy Policy links ────────────────────
+    document.getElementById('linkPrivacyFooter').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.openPrivacyModal();
+    });
+    document.getElementById('linkPrivacyForm').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.openPrivacyModal();
+    });
+    document.getElementById('linkPrivacyCookie').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.openPrivacyModal();
+    });
 
     if (!localStorage.getItem('jifftry_cookies_accepted')) {
         cookieBanner.classList.remove('hidden');
