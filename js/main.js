@@ -217,6 +217,7 @@
 
         fetch(scriptURL, {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
                 'Content-Type': 'text/plain;charset=utf-8',
             },
@@ -235,7 +236,7 @@
             }, 4000);
         })
         .catch(function(error) {
-            console.error('Error al enviar:', error);
+            console.error('Error de red:', error);
             submitBtn.innerText = 'Error - Intenta de nuevo';
             submitBtn.disabled = false;
             submitBtn.classList.remove('opacity-75');
