@@ -300,6 +300,7 @@
     };
 
     btnClosePrivacy.addEventListener('click', window.closePrivacyModal);
+    document.getElementById('btnClosePrivacyUnderstand').addEventListener('click', window.closePrivacyModal);
     privacyOverlay.addEventListener('click', function(e) {
         if (e.target === privacyOverlay) { window.closePrivacyModal(); }
     });
