@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Jifftry</title>
+
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'none';
+        script-src 'self' https://cdn.tailwindcss.com;
+        style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data:;
+        connect-src https://script.google.com https://script.googleusercontent.com;
+        frame-ancestors 'none';
+        base-uri 'self';
+        form-action 'none';
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="js/tailwind-config.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="font-sans relative">
+
+    <div class="stars"></div>
+    <div class="nebula bg-pastel-purple w-[30rem] h-[30rem] top-[-10%] left-[-10%] animate-pulse-slow"></div>
+    <div class="nebula bg-pastel-blue w-[40rem] h-[40rem] top-[20%] right-[-15%] opacity-30 animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="nebula bg-pastel-green w-[25rem] h-[25rem] bottom-[-5%] left-[20%] opacity-20"></div>
+
+    <nav class="fixed w-full z-40 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html">
+                        <img src="img/jifftry-logo.jpg" alt="Jifftry Logo" class="h-14 w-14 rounded-full mix-blend-screen">
+                    </a>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Inicio</a>
+                    <button id="btnNavModal" data-plan="Interesado" class="bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(216,180,254,0.5)]">
+                        Me interesa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10 fade-in-up">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 leading-tight text-white">
+            Blog <span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-blue via-pastel-purple to-pastel-pink">Jifftry</span>
+        </h1>
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto font-light">
+            Noticias, tendencias y tecnología para impulsar tu negocio.
+        </p>
+    </section>
+
+    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost1">
+                <div class="h-40 bg-gradient-to-br from-pastel-purple/30 to-pastel-blue/30 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-space-dark/40"></div>
+                    <svg class="w-16 h-16 text-pastel-purple/80 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-pastel-purple font-medium">IA · Agosto 2026</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-2 group-hover:text-pastel-blue transition-colors">Google lanza Gemini Pro 3: La IA que programa, razona y crea como nunca</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">El nuevo modelo multimodal de Google alcanza puntuaciones récord en benchmarks de código y razonamiento.</p>
+                    <span class="inline-block mt-3 text-xs text-pastel-blue font-medium">Leer más →</span>
+                </div>
+            </article>
+
+            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost2" style="transition-delay: 100ms;">
+                <div class="h-40 bg-gradient-to-br from-pastel-green/30 to-pastel-blue/30 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-space-dark/40"></div>
+                    <svg class="w-14 h-14 text-pastel-green/80 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-pastel-green font-medium">Tecnología · Agosto 2026</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-2 group-hover:text-pastel-green transition-colors">IBM abre su primer centro cuántico en Latinoamérica</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">IBM inaugura un Quantum Data Center en Brasil para empresas de la región.</p>
+                    <span class="inline-block mt-3 text-xs text-pastel-green font-medium">Leer más →</span>
+                </div>
+            </article>
+
+            <article class="glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up group cursor-pointer" id="blogPost3" style="transition-delay: 200ms;">
+                <div class="h-40 bg-gradient-to-br from-pastel-pink/30 to-pastel-yellow/30 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-space-dark/40"></div>
+                    <svg class="w-14 h-14 text-pastel-pink/80 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-pastel-pink font-medium">E-commerce · Agosto 2026</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-2 group-hover:text-pastel-pink transition-colors">E-commerce en Costa Rica crece 34%</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">El mercado digital tico rompe récords impulsado por Sinpe Móvil.</p>
+                    <span class="inline-block mt-3 text-xs text-pastel-pink font-medium">Leer más →</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Blog Post Modal -->
+    <div id="blogOverlay" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 backdrop-blur-md">
+        <div id="blogBox" class="bg-space-light border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-2xl max-h-[85vh] overflow-hidden transform scale-95 transition-transform duration-300 relative">
+            <button id="btnCloseBlog" class="absolute top-4 right-4 text-slate-400 hover:text-white focus:outline-none transition-colors z-10">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div id="blogContentContainer" class="overflow-y-auto max-h-[85vh]">
+                <!-- Dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal (Reused) -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 backdrop-blur-md">
+        <div id="modalBox" class="bg-space-light border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300 relative">
+            <button id="btnCloseModal" class="absolute top-4 right-4 text-slate-400 hover:text-white focus:outline-none transition-colors">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div id="formContainer" class="p-8">
+                <h3 class="text-2xl font-bold text-white mb-2">Inicia tu viaje</h3>
+                <form id="contactForm" class="space-y-4" novalidate>
+                    <input type="hidden" id="jiffy_check" name="jiffy_check" value="">
+                    <input type="hidden" id="planSeleccionado" name="planSeleccionado" value="">
+                    <div aria-hidden="true" class="sr-only">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-slate-300 mb-1">Nombre Completo</label>
+                        <input type="text" id="nombre" required maxlength="120" class="w-full px-4 py-3 rounded-xl border border-white/10 bg-space-dark text-white outline-none focus:ring-2 focus:ring-pastel-purple" placeholder="Juan Pérez">
+                    </div>
+                    <div>
+                        <label for="organizacion" class="block text-sm font-medium text-slate-300 mb-1">Organización</label>
+                        <input type="text" id="organizacion" required maxlength="120" class="w-full px-4 py-3 rounded-xl border border-white/10 bg-space-dark text-white outline-none focus:ring-2 focus:ring-pastel-purple" placeholder="Tu Tienda">
+                    </div>
+                    <div>
+                        <label for="telefono" class="block text-sm font-medium text-slate-300 mb-1">Teléfono</label>
+                        <input type="tel" id="telefono" required maxlength="20" class="w-full px-4 py-3 rounded-xl border border-white/10 bg-space-dark text-white outline-none focus:ring-2 focus:ring-pastel-purple" placeholder="8888-8888">
+                    </div>
+                    <div>
+                        <label for="correo" class="block text-sm font-medium text-slate-300 mb-1">Correo</label>
+                        <input type="email" id="correo" required maxlength="254" class="w-full px-4 py-3 rounded-xl border border-white/10 bg-space-dark text-white outline-none focus:ring-2 focus:ring-pastel-purple" placeholder="juan@correo.com">
+                    </div>
+                    <p id="formError" class="text-pastel-pink text-xs hidden"></p>
+                    <label class="flex items-start gap-2 cursor-pointer">
+                        <input type="checkbox" id="consentimiento" required class="mt-1 w-4 h-4 rounded accent-pastel-purple">
+                        <span class="text-xs text-slate-400">Acepto la <a href="#" id="linkPrivacyForm" class="text-pastel-blue underline">Política de Privacidad</a></span>
+                    </label>
+                    <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-pastel-purple to-pastel-blue text-space-dark font-bold py-3 rounded-xl shadow-[0_0_15px_rgba(216,180,254,0.4)]">Enviar</button>
+                </form>
+            </div>
+            <div id="successMessage" class="hidden p-10 text-center flex-col items-center justify-center">
+                <h3 class="text-2xl font-bold text-white mb-2">Entregado</h3>
+                <p class="text-slate-400">Pronto le contactaremos.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacyOverlay" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 backdrop-blur-md">
+        <div id="privacyBox" class="bg-space-light border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-lg max-h-[80vh] overflow-hidden transform scale-95 transition-transform duration-300 relative">
+            <button id="btnClosePrivacy" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <h3 class="text-2xl font-bold text-white mb-4">Política de Privacidad</h3>
+                <div class="text-sm text-slate-300 space-y-4">
+                    <p>Contenido legal abreviado...</p>
+                </div>
+                <button id="btnClosePrivacyUnderstand" class="mt-6 w-full bg-gradient-to-r from-pastel-purple to-pastel-blue text-space-dark font-bold py-3 rounded-xl">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-20 border-t border-white/10 py-8 text-center text-slate-500 text-sm relative z-10">
+        <p>© 2026 Jifftry. Costa Rica.</p>
+        <p class="mt-2"><a href="#" id="linkPrivacyFooter" class="text-pastel-blue">Política de Privacidad</a></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
