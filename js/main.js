@@ -336,4 +336,24 @@
         cookieBanner.classList.remove('hidden');
     }
 
+    // ── Favicon redondo ─────────────────────────
+    var faviconImg = new Image();
+    faviconImg.onload = function() {
+        var size = 64;
+        var c = document.createElement('canvas');
+        c.width = size;
+        c.height = size;
+        var ctx = c.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+        ctx.clip();
+        ctx.drawImage(faviconImg, 0, 0, size, size);
+        var link = document.createElement('link');
+        link.rel = 'icon';
+        link.type = 'image/png';
+        link.href = c.toDataURL('image/png');
+        document.head.appendChild(link);
+    };
+    faviconImg.src = 'img/favicon-jifftry.png';
+
 })();
