@@ -172,11 +172,64 @@
             </button>
             <div class="p-8 overflow-y-auto max-h-[80vh]">
                 <h3 class="text-2xl font-bold text-white mb-4">Política de Privacidad</h3>
-                <div class="text-sm text-slate-300 space-y-4">
-                    <p>Contenido legal abreviado...</p>
+                <p class="text-slate-400 text-xs mb-6">Última actualización: Agosto 2026</p>
+
+                <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">1. Responsable del Tratamiento</h4>
+                        <p><strong>Jose Pablo Guevara Brenes</strong>, en calidad de CEO de <strong>Jifftry</strong>, con domicilio en Costa Rica, es el responsable del tratamiento de los datos personales que usted proporciona a través de este sitio web, de conformidad con la Ley de Protección de la Persona frente al Tratamiento de sus Datos Personales (Ley N° 8968).</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">2. Datos que Recopilamos</h4>
+                        <p>Al completar nuestro formulario de contacto, recopilamos los siguientes datos:</p>
+                        <ul class="list-disc pl-5 mt-1 space-y-1">
+                            <li>Nombre completo</li>
+                            <li>Nombre de la organización o tienda</li>
+                            <li>Número de teléfono</li>
+                            <li>Correo electrónico</li>
+                            <li>Plan de interés seleccionado</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">3. Finalidad del Tratamiento</h4>
+                        <p>Sus datos serán utilizados exclusivamente para:</p>
+                        <ul class="list-disc pl-5 mt-1 space-y-1">
+                            <li>Contactarle y brindarle asesoría sobre nuestros servicios de tiendas en línea.</li>
+                            <li>Enviarle información relacionada con el plan de su interés.</li>
+                            <li>Dar seguimiento a su solicitud comercial.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">4. Almacenamiento y Seguridad</h4>
+                        <p>Sus datos se almacenan en Google Sheets a través de Google Apps Script, bajo las medidas de seguridad provistas por Google Cloud. No compartimos, vendemos ni transferimos sus datos a terceros.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">5. Derechos ARCO</h4>
+                        <p>Usted tiene derecho a <strong>Acceder, Rectificar, Cancelar y Oponerse</strong> al tratamiento de sus datos personales. Para ejercer estos derechos, puede contactarnos al correo electrónico que se le proporcionará al momento de la asesoría.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">6. Cookies</h4>
+                        <p>Este sitio utiliza cookies técnicas esenciales para su funcionamiento. No utilizamos cookies de rastreo ni publicitarias. Al continuar navegando, usted acepta el uso de estas cookies. Puede configurar su navegador para rechazarlas, aunque esto podría afectar la funcionalidad del sitio.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">7. Consentimiento</h4>
+                        <p>Al marcar la casilla de aceptación en nuestro formulario y enviar sus datos, usted consiente expresa e inequívocamente el tratamiento de sus datos personales conforme a lo establecido en esta Política de Privacidad.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">8. Modificaciones</h4>
+                        <p>Jifftry se reserva el derecho de modificar esta política en cualquier momento. Los cambios serán publicados en esta misma página.</p>
+                    </div>
                 </div>
+
                 <button id="btnClosePrivacyUnderstand" class="mt-6 w-full bg-gradient-to-r from-pastel-purple to-pastel-blue text-space-dark font-bold py-3 rounded-xl">Entendido</button>
             </div>
+        </div>
+    </div>
+
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-50 bg-space-dark/95 backdrop-blur-md border-t border-white/10 px-4 py-4 hidden">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-300">
+            <p class="text-center sm:text-left">Este sitio utiliza cookies técnicas esenciales para su funcionamiento. Al continuar navegando aceptás nuestra <a href="#" id="linkPrivacyCookie" class="text-pastel-blue underline">Política de Privacidad</a>.</p>
+            <button id="btnAcceptCookies" class="shrink-0 bg-gradient-to-r from-pastel-purple to-pastel-blue text-space-dark font-bold px-6 py-2 rounded-full transition-all text-xs">Aceptar</button>
         </div>
     </div>
 
