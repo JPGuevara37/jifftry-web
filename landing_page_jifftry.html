@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jifftry - Lleva tu Tienda a Otra Dimensión</title>
+
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'none';
+        script-src https://cdn.tailwindcss.com 'sha256-U7vl+FJjWhG6I1RWuLNoyRDWquDKluKsdTWEh+Hij+M=' 'sha256-b1coSpArHJwh9BrrTjcK87UA//sWGXZCeHcmLJiJTH4=';
+        style-src https://fonts.googleapis.com 'sha256-9uozHBqVnSfKSnpUnxAZYUmHrgE7u0EAf/7k3CPWTdw=' 'unsafe-inline';
+        font-src https://fonts.gstatic.com;
+        img-src 'self' data:;
+        connect-src https://script.google.com;
+        frame-ancestors 'none';
+        base-uri 'self';
+        form-action 'none';
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        space: {
+                            dark: '#0B0F19',
+                            light: '#1A2235',
+                            accent: '#2A3655'
+                        },
+                        pastel: {
+                            blue: '#93c5fd',
+                            green: '#86efac',
+                            purple: '#d8b4fe',
+                            yellow: '#fde047',
+                            pink: '#f9a8d4'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out infinite 3s',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.3;
+        }
+
+        .nebula {
+            position: absolute;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: rgba(26, 34, 53, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body class="font-sans relative">
+
+    <div class="stars"></div>
+    <div class="nebula bg-pastel-purple w-[30rem] h-[30rem] top-[-10%] left-[-10%] animate-pulse-slow"></div>
+    <div class="nebula bg-pastel-blue w-[40rem] h-[40rem] top-[20%] right-[-15%] opacity-30 animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="nebula bg-pastel-green w-[25rem] h-[25rem] bottom-[-5%] left-[20%] opacity-20"></div>
+
+    <nav class="fixed w-full z-40 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center bg-white/10 p-2 rounded-xl backdrop-blur-sm border border-white/10">
+                    <img src="jifftry-logo.jpg" alt="Jifftry Logo" class="h-10 w-auto rounded-lg mix-blend-screen">
+                </div>
+                <div>
+                    <button onclick="openModal()" class="bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(216,180,254,0.5)]">
+                        Me interesa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10 fade-in-up">
+
+        <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-gradient-to-br from-pastel-green to-transparent opacity-20 animate-float"></div>
+        <div class="absolute top-40 right-20 w-24 h-24 rounded-full bg-gradient-to-bl from-pastel-pink to-transparent opacity-20 animate-float-delayed"></div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-white">
+            Expande el Universo de <br class="hidden md:block" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-blue via-pastel-purple to-pastel-pink">tu Tienda Online</span>
+        </h1>
+        <p class="mt-6 text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+            Asesoria para tu negocio definitivo para Costa Rica. Conectada directamente con nosotros para ayudarte a mejorar tu negocio.
+        </p>
+    </section>
+
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10" id="planes">
+
+        <div class="text-center mb-16 fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Elige tu Trayectoria</h2>
+            <p class="text-slate-400">Planes diseñados para cada etapa de tu exploración comercial.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="glass-card flex flex-col h-full rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up relative border-t-4 border-t-pastel-green group">
+                <div class="absolute top-0 right-0 bg-pastel-green text-space-dark text-xs font-bold px-3 py-1 rounded-bl-lg">PUNTO DE PARTIDA</div>
+                <div class="p-8 border-b border-white/5 relative overflow-hidden shrink-0">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-pastel-green/10 rounded-full blur-2xl group-hover:bg-pastel-green/20 transition-colors"></div>
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                        🚀 Despegue
+                    </h3>
+                    <p class="text-sm text-pastel-green mt-2 font-medium">Starter - Prueba Gratis</p>
+                    <div class="mt-4 flex items-baseline text-4xl font-extrabold text-white">
+                        $35
+                        <span class="ml-1 text-lg font-medium text-slate-400">/mes</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Opción Anual: $350 (2 meses gratis)</p>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <ul class="space-y-4 text-sm text-slate-300 mb-6">
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Catálogo hasta 100 productos</li>
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Pedidos directo a WhatsApp</li>
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Validación SINPE Móvil</li>
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Subdominio (tunegocio.jifftry.com)</li>
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Soporte en horario laboral</li>
+                    </ul>
+                    <div class="bg-space-light/50 p-4 rounded-xl text-xs text-slate-300 border border-white/5 mb-6">
+                        <strong class="text-pastel-green">Tu Misión Inicia Aquí:</strong> Inicias hoy a ₡0. Pruebas todo el sistema por 30 días sin compromisos. Luego, continúas por solo ~₡18.000/mes.
+                    </div>
+                    <button onclick="openModal()" class="w-full mt-auto bg-white/10 hover:bg-pastel-green hover:text-space-dark text-white border border-white/20 hover:border-pastel-green py-3 rounded-xl font-semibold transition-all">Empezar Gratis</button>
+                </div>
+            </div>
+
+            <div class="glass-card flex flex-col h-full rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up border-t-4 border-t-pastel-blue group" style="transition-delay: 100ms;">
+                <div class="p-8 border-b border-white/5 relative overflow-hidden shrink-0">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-pastel-blue/10 rounded-full blur-2xl group-hover:bg-pastel-blue/20 transition-colors"></div>
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                        🛰️ Órbita
+                    </h3>
+                    <p class="text-sm text-pastel-blue mt-2 font-medium">Pro - Escalabilidad</p>
+                    <div class="mt-4 flex items-baseline text-4xl font-extrabold text-white">
+                        $59
+                        <span class="ml-1 text-lg font-medium text-slate-400">/mes</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Opción Anual: $590 (2 meses gratis)</p>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <ul class="space-y-4 text-sm text-slate-300 mb-6">
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Productos e inventario ILIMITADOS</li>
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Dominio .com propio + SSL</li>
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Marca Blanca 100%</li>
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Reportes y analítica mensual</li>
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Soporte prioritario</li>
+                    </ul>
+                    <div class="bg-space-light/50 p-4 rounded-xl text-xs text-slate-300 border border-white/5 mb-6">
+                        <strong class="text-pastel-blue">Expansión Inteligente:</strong> Formaliza tu marca con dominio propio y capacidad ilimitada, todo centralizado en una sola cuota accesible.
+                    </div>
+                    <button onclick="openModal()" class="w-full mt-auto bg-white/10 hover:bg-pastel-blue hover:text-space-dark text-white border border-white/20 hover:border-pastel-blue py-3 rounded-xl font-semibold transition-all">Seleccionar Órbita</button>
+                </div>
+            </div>
+
+            <div class="glass-card flex flex-col h-full rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up border-t-4 border-t-pastel-purple group" style="transition-delay: 200ms;">
+                <div class="absolute top-0 right-0 bg-pastel-purple text-space-dark text-xs font-bold px-3 py-1 rounded-bl-lg">MÁS POPULAR</div>
+                <div class="p-8 border-b border-white/5 relative overflow-hidden shrink-0">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-pastel-purple/10 rounded-full blur-2xl group-hover:bg-pastel-purple/20 transition-colors"></div>
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                        🌌 Galaxia
+                    </h3>
+                    <p class="text-sm text-pastel-purple mt-2 font-medium">Business - Automatización</p>
+                    <div class="mt-4 flex items-baseline text-4xl font-extrabold text-white">
+                        $89
+                        <span class="ml-1 text-lg font-medium text-slate-400">/mes</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Opción Anual: $890 (2 meses gratis)</p>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <ul class="space-y-4 text-sm text-slate-300 mb-6 flex-grow">
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> <strong>Todo lo del Plan Órbita</strong></li>
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Módulo de facturación/contable</li>
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Flujos personalizados (Alertas)</li>
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Capacitación inicial (Llamada/Video)</li>
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Soporte preferencial 24/7</li>
+                    </ul>
+                    <button onclick="openModal()" class="w-full mt-auto bg-white/10 hover:bg-pastel-purple hover:text-space-dark text-white border border-white/20 hover:border-pastel-purple py-3 rounded-xl font-semibold transition-all">Seleccionar Galaxia</button>
+                </div>
+            </div>
+
+            <div class="glass-card flex flex-col h-full rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up border-t-4 border-t-pastel-pink group" style="transition-delay: 300ms;">
+                <div class="p-8 border-b border-white/5 relative overflow-hidden shrink-0">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-pastel-pink/10 rounded-full blur-2xl group-hover:bg-pastel-pink/20 transition-colors"></div>
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                        🪐 Titán
+                    </h3>
+                    <p class="text-sm text-pastel-pink mt-2 font-medium">Enterprise - A Medida</p>
+                    <div class="mt-4 flex items-baseline text-3xl font-extrabold text-white">
+                        Cotización
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Setup + Mantenimiento</p>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <ul class="space-y-4 text-sm text-slate-300 mb-6 flex-grow">
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Infraestructura dedicada / VPS</li>
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Desarrollo personalizado (ERP, CRM)</li>
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Arquitectura multi-sucursal</li>
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> SLA de disponibilidad del 99.9%</li>
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Atención directa con ingeniero</li>
+                    </ul>
+                    <button onclick="openModal()" class="w-full mt-auto bg-white/10 hover:bg-pastel-pink hover:text-space-dark text-white border border-white/20 hover:border-pastel-pink py-3 rounded-xl font-semibold transition-all">Contactar Ventas</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="mt-20 border-t border-white/10 py-8 text-center text-slate-500 text-sm relative z-10">
+        <p>© 2026 Jifftry. Explorando el comercio del futuro en Costa Rica.</p>
+    </footer>
+
+    <div id="modalOverlay" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 backdrop-blur-md">
+
+        <div id="modalBox" class="bg-space-light border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300 relative">
+
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white focus:outline-none transition-colors">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div id="formContainer" class="p-8">
+                <h3 class="text-2xl font-bold text-white mb-2">Inicia tu viaje</h3>
+                <p class="text-slate-400 text-sm mb-6">Déjanos tus coordenadas (datos) y el equipo de control se pondrá en contacto para preparar el lanzamiento de tu tienda.</p>
+
+                <form id="contactForm" class="space-y-4" novalidate>
+
+                    <!-- Honeypot 1: campo de texto invisible -->
+                    <div aria-hidden="true" class="sr-only">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- Honeypot 2: campo oculto que JS rellena; si cambia, es bot -->
+                    <input type="hidden" id="jiffy_check" name="jiffy_check" value="">
+
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-slate-300 mb-1">Nombre Completo</label>
+                        <input type="text" id="nombre" required maxlength="120" class="w-full px-4 py-3 rounded-xl border border-white/10 focus:ring-2 focus:ring-pastel-purple focus:border-transparent outline-none transition-colors bg-space-dark text-white placeholder-slate-600" placeholder="Ej. Juan Pérez">
+                    </div>
+                    <div>
+                        <label for="organizacion" class="block text-sm font-medium text-slate-300 mb-1">Nombre de Organización</label>
+                        <input type="text" id="organizacion" required maxlength="120" class="w-full px-4 py-3 rounded-xl border border-white/10 focus:ring-2 focus:ring-pastel-purple focus:border-transparent outline-none transition-colors bg-space-dark text-white placeholder-slate-600" placeholder="Nombre de tu tienda">
+                    </div>
+                    <div>
+                        <label for="telefono" class="block text-sm font-medium text-slate-300 mb-1">Teléfono</label>
+                        <input type="tel" id="telefono" required maxlength="20" class="w-full px-4 py-3 rounded-xl border border-white/10 focus:ring-2 focus:ring-pastel-purple focus:border-transparent outline-none transition-colors bg-space-dark text-white placeholder-slate-600" placeholder="8888-8888">
+                    </div>
+                    <div>
+                        <label for="correo" class="block text-sm font-medium text-slate-300 mb-1">Correo</label>
+                        <input type="email" id="correo" required maxlength="254" class="w-full px-4 py-3 rounded-xl border border-white/10 focus:ring-2 focus:ring-pastel-purple focus:border-transparent outline-none transition-colors bg-space-dark text-white placeholder-slate-600" placeholder="juan@correo.com">
+                    </div>
+
+                    <p id="formError" class="text-pastel-pink text-xs hidden"></p>
+
+                    <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark font-bold py-3 px-4 rounded-xl mt-6 transition-all shadow-[0_0_15px_rgba(216,180,254,0.4)]">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+
+            <div id="successMessage" class="hidden p-10 text-center flex-col items-center justify-center h-full">
+                <div class="w-20 h-20 bg-pastel-green/20 rounded-full flex items-center justify-center mb-6 mx-auto text-pastel-green shadow-[0_0_20px_rgba(134,239,172,0.3)]">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Entregado</h3>
+                <p class="text-slate-400">Hemos recibido tus datos con éxito.</p>
+                <p class="text-pastel-purple font-bold mt-3 text-lg">Pronto le contactaremos.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            "use strict";
+
+            // ── Navbar blur on scroll ───────────────────────
+            window.addEventListener('scroll', function() {
+                var nav = document.getElementById('navbar');
+                if (window.scrollY > 20) {
+                    nav.classList.add('bg-space-dark/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+                } else {
+                    nav.classList.remove('bg-space-dark/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+                }
+            });
+
+            // ── Scroll animations ───────────────────────────
+            var observer = new IntersectionObserver(function(entries, obs) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(function(el) {
+                observer.observe(el);
+            });
+
+            // ── Modal logic ─────────────────────────────────
+            var modalOverlay = document.getElementById('modalOverlay');
+            var modalBox = document.getElementById('modalBox');
+            var formContainer = document.getElementById('formContainer');
+            var successMessage = document.getElementById('successMessage');
+            var contactForm = document.getElementById('contactForm');
+            var formError = document.getElementById('formError');
+            var submitBtn = document.getElementById('submitBtn');
+
+            var formOpenedAt = 0;
+            var fieldsTouched = 0;
+
+            window.openModal = function() {
+                formOpenedAt = Date.now();
+                fieldsTouched = 0;
+                document.getElementById('jiffy_check').value = 'ok';
+                formContainer.classList.remove('hidden');
+                successMessage.classList.add('hidden');
+                successMessage.classList.remove('flex');
+                contactForm.reset();
+                hideError();
+
+                modalOverlay.classList.remove('hidden');
+                setTimeout(function() {
+                    modalOverlay.classList.remove('opacity-0');
+                    modalBox.classList.remove('scale-95');
+                    modalBox.classList.add('scale-100');
+                }, 10);
+            };
+
+            window.closeModal = function() {
+                modalOverlay.classList.add('opacity-0');
+                modalBox.classList.remove('scale-100');
+                modalBox.classList.add('scale-95');
+
+                setTimeout(function() {
+                    modalOverlay.classList.add('hidden');
+                }, 300);
+            };
+
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) { window.closeModal(); }
+            });
+
+            // ── Human interaction tracking ──────────────────
+            ['nombre', 'organizacion', 'telefono', 'correo'].forEach(function(id) {
+                document.getElementById(id).addEventListener('focus', function() {
+                    fieldsTouched = Math.min(fieldsTouched + 1, 99);
+                }, { once: false });
+            });
+
+            // ── Sanitizer ───────────────────────────────────
+            function sanitize(str) {
+                return str
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#x27;')
+                    .replace(/\//g, '&#x2F;')
+                    .trim();
+            }
+
+            // ── Validators ──────────────────────────────────
+            function isValidCRPhone(phone) {
+                // Formatos CR: 8XXX-XXXX, 2XXX-XXXX, 6XXX-XXXX, +506 XXXX-XXXX
+                var cleaned = phone.replace(/[\s\-\(\)\+]/g, '');
+                return /^(506)?[2-8]\d{7}$/.test(cleaned);
+            }
+
+            function isValidEmail(email) {
+                return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/.test(email);
+            }
+
+            function showError(msg) {
+                formError.textContent = msg;
+                formError.classList.remove('hidden');
+            }
+
+            function hideError() {
+                formError.textContent = '';
+                formError.classList.add('hidden');
+            }
+
+            // ── Rate limiting ───────────────────────────────
+            var lastSubmitTime = 0;
+            var SUBMIT_COOLDOWN = 8000;
+
+            // ⚠️ CAMBIA ESTE TOKEN: el Google Apps Script debe validarlo para aceptar la petición.
+            // Debe coincidir con lo que configures en el script del lado de Google.
+            var SECURITY_TOKEN = 'j1ff7ry-2026-s3cur3-t0k3n-C4mb14r3st0';
+
+            // ── Form submission ─────────────────────────────
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                hideError();
+
+                // ── Honeypot 1 check ────────────────────
+                var honeypot = document.getElementById('website');
+                if (honeypot && honeypot.value.trim() !== '') {
+                    formContainer.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                    successMessage.classList.add('flex');
+                    return;
+                }
+
+                // ── Honeypot 2 check ────────────────────
+                if (document.getElementById('jiffy_check').value !== 'ok') {
+                    formContainer.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                    successMessage.classList.add('flex');
+                    return;
+                }
+
+                // ── Time-based detection ─────────────────
+                var now = Date.now();
+                var timeSinceOpen = (now - formOpenedAt) / 1000;
+                if (timeSinceOpen < 4) {
+                    showError('Por favor completa el formulario con calma.');
+                    return;
+                }
+                if (timeSinceOpen > 7200) {
+                    showError('La sesión expiró. Cierra y abre de nuevo el formulario.');
+                    return;
+                }
+
+                // ── Interaction check ────────────────────
+                if (fieldsTouched < 2) {
+                    showError('Por favor revisa todos los campos antes de enviar.');
+                    return;
+                }
+
+                // ── Cooldown ─────────────────────────────
+                if (now - lastSubmitTime < SUBMIT_COOLDOWN) {
+                    var remaining = Math.ceil((SUBMIT_COOLDOWN - (now - lastSubmitTime)) / 1000);
+                    showError('Por favor espera ' + remaining + ' segundos antes de enviar de nuevo.');
+                    return;
+                }
+
+                // ── Gather & sanitize ───────────────────
+                var rawNombre = document.getElementById('nombre').value;
+                var rawOrg = document.getElementById('organizacion').value;
+                var rawTel = document.getElementById('telefono').value;
+                var rawCorreo = document.getElementById('correo').value;
+
+                // Sanitize
+                var nombre = sanitize(rawNombre);
+                var organizacion = sanitize(rawOrg);
+                var telefono = sanitize(rawTel);
+                var correo = sanitize(rawCorreo);
+
+                // ── Validate ────────────────────────────
+                if (nombre.length < 2) {
+                    showError('Ingresa un nombre válido (mínimo 2 caracteres).');
+                    return;
+                }
+                if (organizacion.length < 1) {
+                    showError('Ingresa el nombre de tu organización.');
+                    return;
+                }
+                if (!isValidCRPhone(telefono)) {
+                    showError('Ingresa un número de teléfono válido de Costa Rica (ej. 8888-8888).');
+                    return;
+                }
+                if (!isValidEmail(correo)) {
+                    showError('Ingresa un correo electrónico válido.');
+                    return;
+                }
+
+                // ── Send ────────────────────────────────
+                lastSubmitTime = now;
+                var originalText = submitBtn.innerText;
+                submitBtn.innerText = 'Enviando al espacio...';
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-75');
+
+                var scriptURL = 'https://script.google.com/macros/s/AKfycbxv6dAon1JGx568-_x1dS0WT3IgjgfybHHyi7KTTm-MhjklwkuIJpPWfxNYet5319jI/exec';
+
+                var formData = {
+                    nombre: nombre,
+                    organizacion: organizacion,
+                    telefono: telefono,
+                    correo: correo,
+                    token: SECURITY_TOKEN,
+                    submittedAt: now
+                };
+
+                fetch(scriptURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8',
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(function() {
+                    formContainer.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                    successMessage.classList.add('flex');
+
+                    setTimeout(function() {
+                        window.closeModal();
+                        submitBtn.innerText = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-75');
+                    }, 4000);
+                })
+                .catch(function(error) {
+                    console.error('Error al enviar:', error);
+                    submitBtn.innerText = 'Error - Intenta de nuevo';
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-75');
+
+                    setTimeout(function() {
+                        submitBtn.innerText = originalText;
+                    }, 3000);
+                });
+            });
+
+        })();
+    </script>
+</body>
+</html>
