@@ -38,7 +38,7 @@
                     <img src="img/jifftry-logo.jpg" alt="Jifftry Logo" class="h-10 w-10 rounded-full mix-blend-screen">
                 </div>
                 <div>
-                    <button id="btnNavModal" class="bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(216,180,254,0.5)]">
+                    <button id="btnNavModal" data-plan="General" class="bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(216,180,254,0.5)]">
                         Me interesa
                     </button>
                 </div>
@@ -52,18 +52,17 @@
         <div class="absolute top-40 right-20 w-24 h-24 rounded-full bg-gradient-to-bl from-pastel-pink to-transparent opacity-20 animate-float-delayed"></div>
 
         <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-white">
-            Expandete con <br class="hidden md:block" />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-blue via-pastel-purple to-pastel-pink">tu Tienda Online</span>
+            Expande tu PYME<br class="hidden md:block" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-blue via-pastel-purple to-pastel-pink">con nosotros</span>
         </h1>
         <p class="mt-6 text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-            Asesoria para tu negocio definitivo para Costa Rica. Conectada directamente con nosotros para ayudarte a mejorar tu negocio.
+            Asesoria para tu pequeña o mediana empresa. Precio a tu medida sin letra chica. Contactanos en el botón "Me interesa" para ayudarte a mejorar tu negocio.
         </p>
     </section>
-
     <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10" id="planes">
-
+    
         <div class="text-center mb-16 fade-in-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Elige tu Plan</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">O puedes eligir tu Plan</h2>
             <p class="text-slate-400">Planes diseñados para cada etapa de tu exploración comercial.</p>
         </div>
 
@@ -94,7 +93,7 @@
                     <div class="bg-space-light/50 p-4 rounded-xl text-xs text-slate-300 border border-white/5 mb-6">
                         <strong class="text-pastel-green">Tu Misión Inicia Aquí:</strong> Inicias hoy a ₡0. Pruebas todo el sistema por 30 días sin compromisos. Luego, continúas por solo ~₡18.000/mes.
                     </div>
-                    <button class="w-full mt-auto bg-white/10 hover:bg-pastel-green hover:text-space-dark text-white border border-white/20 hover:border-pastel-green py-3 rounded-xl font-semibold transition-all">Empezar Gratis</button>
+                    <button data-plan="Despegue" class="w-full mt-auto bg-white/10 hover:bg-pastel-green hover:text-space-dark text-white border border-white/20 hover:border-pastel-green py-3 rounded-xl font-semibold transition-all">Empezar Gratis</button>
                 </div>
             </div>
 
@@ -122,7 +121,7 @@
                     <div class="bg-space-light/50 p-4 rounded-xl text-xs text-slate-300 border border-white/5 mb-6">
                         <strong class="text-pastel-blue">Expansión Inteligente:</strong> Formaliza tu marca con dominio propio y capacidad ilimitada, todo centralizado en una sola cuota accesible.
                     </div>
-                    <button class="w-full mt-auto bg-white/10 hover:bg-pastel-blue hover:text-space-dark text-white border border-white/20 hover:border-pastel-blue py-3 rounded-xl font-semibold transition-all">Seleccionar Órbita</button>
+                    <button data-plan="Órbita" class="w-full mt-auto bg-white/10 hover:bg-pastel-blue hover:text-space-dark text-white border border-white/20 hover:border-pastel-blue py-3 rounded-xl font-semibold transition-all">Seleccionar Órbita</button>
                 </div>
             </div>
 
@@ -148,7 +147,7 @@
                         <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Capacitación inicial (Llamada/Video)</li>
                         <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Soporte preferencial 24/7</li>
                     </ul>
-                    <button class="w-full mt-auto bg-white/10 hover:bg-pastel-purple hover:text-space-dark text-white border border-white/20 hover:border-pastel-purple py-3 rounded-xl font-semibold transition-all">Seleccionar Galaxia</button>
+                    <button data-plan="Galaxia" class="w-full mt-auto bg-white/10 hover:bg-pastel-purple hover:text-space-dark text-white border border-white/20 hover:border-pastel-purple py-3 rounded-xl font-semibold transition-all">Seleccionar Galaxia</button>
                 </div>
             </div>
 
@@ -172,7 +171,7 @@
                         <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> SLA de disponibilidad del 99.9%</li>
                         <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Atención directa con ingeniero</li>
                     </ul>
-                    <button class="w-full mt-auto bg-white/10 hover:bg-pastel-pink hover:text-space-dark text-white border border-white/20 hover:border-pastel-pink py-3 rounded-xl font-semibold transition-all">Contactar Ventas</button>
+                    <button data-plan="Titán" class="w-full mt-auto bg-white/10 hover:bg-pastel-pink hover:text-space-dark text-white border border-white/20 hover:border-pastel-pink py-3 rounded-xl font-semibold transition-all">Contactar Ventas</button>
                 </div>
             </div>
 
@@ -204,6 +203,7 @@
                         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                     </div>
                     <input type="hidden" id="jiffy_check" name="jiffy_check" value="">
+                    <input type="hidden" id="planSeleccionado" name="planSeleccionado" value="">
 
                     <div>
                         <label for="nombre" class="block text-sm font-medium text-slate-300 mb-1">Nombre Completo</label>
