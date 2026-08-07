@@ -41,7 +41,6 @@
         formOpenedAt = Date.now();
         fieldsTouched = 0;
         document.getElementById('jiffy_check').value = 'ok';
-        document.getElementById('planSeleccionado').value = '';
         formContainer.classList.remove('hidden');
         successMessage.classList.add('hidden');
         successMessage.classList.remove('flex');
@@ -72,14 +71,14 @@
 
             // Button event listeners (reemplazan los onclick inline)
             document.getElementById('btnNavModal').addEventListener('click', function(e) {
-                document.getElementById('planSeleccionado').value = e.target.getAttribute('data-plan');
                 window.openModal();
+                document.getElementById('planSeleccionado').value = e.target.getAttribute('data-plan');
             });
             document.getElementById('btnCloseModal').addEventListener('click', window.closeModal);
             document.querySelectorAll('.glass-card button').forEach(function(btn) {
                 btn.addEventListener('click', function(e) {
-                    document.getElementById('planSeleccionado').value = e.target.getAttribute('data-plan');
                     window.openModal();
+                    document.getElementById('planSeleccionado').value = e.target.getAttribute('data-plan');
                 });
             });
 
