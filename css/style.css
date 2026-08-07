@@ -83,3 +83,25 @@ body {
 input[type="checkbox"] {
     accent-color: #d8b4fe;
 }
+
+#blog article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#blogOverlay .overflow-y-auto::-webkit-scrollbar {
+    width: 4px;
+}
+
+#blogOverlay .overflow-y-auto::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+}
+
+#blogOverlay .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: rgba(216, 180, 254, 0.3);
+    border-radius: 2px;
+}
+
+.text-pastel-yellow {
+    color: #fde047;
+}

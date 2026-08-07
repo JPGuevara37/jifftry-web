@@ -336,6 +336,35 @@
         cookieBanner.classList.remove('hidden');
     }
 
+    // ── Blog Post Modal ─────────────────────────
+    var blogOverlay = document.getElementById('blogOverlay');
+    var blogBox = document.getElementById('blogBox');
+    var btnCloseBlog = document.getElementById('btnCloseBlog');
+
+    function openBlogModal() {
+        blogOverlay.classList.remove('hidden');
+        setTimeout(function() {
+            blogOverlay.classList.remove('opacity-0');
+            blogBox.classList.remove('scale-95');
+            blogBox.classList.add('scale-100');
+        }, 10);
+    }
+
+    function closeBlogModal() {
+        blogOverlay.classList.add('opacity-0');
+        blogBox.classList.remove('scale-100');
+        blogBox.classList.add('scale-95');
+        setTimeout(function() {
+            blogOverlay.classList.add('hidden');
+        }, 300);
+    }
+
+    document.getElementById('blogPost1').addEventListener('click', openBlogModal);
+    btnCloseBlog.addEventListener('click', closeBlogModal);
+    blogOverlay.addEventListener('click', function(e) {
+        if (e.target === blogOverlay) { closeBlogModal(); }
+    });
+
     // ── Favicon redondo ─────────────────────────
     var faviconImg = new Image();
     faviconImg.onload = function() {
