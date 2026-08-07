@@ -65,11 +65,18 @@
         }, 300);
     };
 
-    modalOverlay.addEventListener('click', function(e) {
-        if (e.target === modalOverlay) { window.closeModal(); }
-    });
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) { window.closeModal(); }
+            });
 
-    // Human interaction tracking
+            // Button event listeners (reemplazan los onclick inline)
+            document.getElementById('btnNavModal').addEventListener('click', window.openModal);
+            document.getElementById('btnCloseModal').addEventListener('click', window.closeModal);
+            document.querySelectorAll('.glass-card button').forEach(function(btn) {
+                btn.addEventListener('click', window.openModal);
+            });
+
+            // Human interaction tracking
     ['nombre', 'organizacion', 'telefono', 'correo'].forEach(function(id) {
         document.getElementById(id).addEventListener('focus', function() {
             fieldsTouched = Math.min(fieldsTouched + 1, 99);

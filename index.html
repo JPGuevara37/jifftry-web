@@ -38,7 +38,7 @@
                     <img src="img/jifftry-logo.jpg" alt="Jifftry Logo" class="h-10 w-10 rounded-full mix-blend-screen">
                 </div>
                 <div>
-                    <button onclick="openModal()" class="bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(216,180,254,0.5)]">
+                    <button id="btnNavModal" class="bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(216,180,254,0.5)]">
                         Me interesa
                     </button>
                 </div>
@@ -94,7 +94,7 @@
                     <div class="bg-space-light/50 p-4 rounded-xl text-xs text-slate-300 border border-white/5 mb-6">
                         <strong class="text-pastel-green">Tu Misión Inicia Aquí:</strong> Inicias hoy a ₡0. Pruebas todo el sistema por 30 días sin compromisos. Luego, continúas por solo ~₡18.000/mes.
                     </div>
-                    <button onclick="openModal()" class="w-full mt-auto bg-white/10 hover:bg-pastel-green hover:text-space-dark text-white border border-white/20 hover:border-pastel-green py-3 rounded-xl font-semibold transition-all">Empezar Gratis</button>
+                    <button class="w-full mt-auto bg-white/10 hover:bg-pastel-green hover:text-space-dark text-white border border-white/20 hover:border-pastel-green py-3 rounded-xl font-semibold transition-all">Empezar Gratis</button>
                 </div>
             </div>
 
@@ -122,7 +122,7 @@
                     <div class="bg-space-light/50 p-4 rounded-xl text-xs text-slate-300 border border-white/5 mb-6">
                         <strong class="text-pastel-blue">Expansión Inteligente:</strong> Formaliza tu marca con dominio propio y capacidad ilimitada, todo centralizado en una sola cuota accesible.
                     </div>
-                    <button onclick="openModal()" class="w-full mt-auto bg-white/10 hover:bg-pastel-blue hover:text-space-dark text-white border border-white/20 hover:border-pastel-blue py-3 rounded-xl font-semibold transition-all">Seleccionar Órbita</button>
+                    <button class="w-full mt-auto bg-white/10 hover:bg-pastel-blue hover:text-space-dark text-white border border-white/20 hover:border-pastel-blue py-3 rounded-xl font-semibold transition-all">Seleccionar Órbita</button>
                 </div>
             </div>
 
@@ -148,7 +148,7 @@
                         <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Capacitación inicial (Llamada/Video)</li>
                         <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Soporte preferencial 24/7</li>
                     </ul>
-                    <button onclick="openModal()" class="w-full mt-auto bg-white/10 hover:bg-pastel-purple hover:text-space-dark text-white border border-white/20 hover:border-pastel-purple py-3 rounded-xl font-semibold transition-all">Seleccionar Galaxia</button>
+                    <button class="w-full mt-auto bg-white/10 hover:bg-pastel-purple hover:text-space-dark text-white border border-white/20 hover:border-pastel-purple py-3 rounded-xl font-semibold transition-all">Seleccionar Galaxia</button>
                 </div>
             </div>
 
@@ -172,7 +172,7 @@
                         <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> SLA de disponibilidad del 99.9%</li>
                         <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Atención directa con ingeniero</li>
                     </ul>
-                    <button onclick="openModal()" class="w-full mt-auto bg-white/10 hover:bg-pastel-pink hover:text-space-dark text-white border border-white/20 hover:border-pastel-pink py-3 rounded-xl font-semibold transition-all">Contactar Ventas</button>
+                    <button class="w-full mt-auto bg-white/10 hover:bg-pastel-pink hover:text-space-dark text-white border border-white/20 hover:border-pastel-pink py-3 rounded-xl font-semibold transition-all">Contactar Ventas</button>
                 </div>
             </div>
 
@@ -187,7 +187,7 @@
 
         <div id="modalBox" class="bg-space-light border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300 relative">
 
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white focus:outline-none transition-colors">
+            <button id="btnCloseModal" class="absolute top-4 right-4 text-slate-400 hover:text-white focus:outline-none transition-colors">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
