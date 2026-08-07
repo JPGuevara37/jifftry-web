@@ -217,13 +217,29 @@
 
         fetch(scriptURL, {
             method: 'POST',
-            mode: 'no-cors',
             headers: {
                 'Content-Type': 'text/plain;charset=utf-8',
             },
             body: JSON.stringify(formData)
         })
-        .then(function() {
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            if (data.result === 'duplicate') {
+                showError(data.error || 'Este correo ya está registrado.');
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-75');
+                return;
+            }
+            if (data.result === 'error') {
+                showError(data.error || 'Error del servidor.');
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-75');
+                return;
+            }
             formContainer.classList.add('hidden');
             successMessage.classList.remove('hidden');
             successMessage.classList.add('flex');
