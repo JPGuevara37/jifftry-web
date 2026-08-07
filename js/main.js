@@ -132,6 +132,12 @@
         e.preventDefault();
         hideError();
 
+        // Consent check
+        if (!document.getElementById('consentimiento').checked) {
+            showError('Debés aceptar la Política de Privacidad para enviar el formulario.');
+            return;
+        }
+
         // Honeypot 1 check
         var honeypot = document.getElementById('website');
         if (honeypot && honeypot.value.trim() !== '') {
@@ -269,5 +275,48 @@
             }, 3000);
         });
     });
+
+    // ── Privacy Policy Modal ────────────────────
+    var privacyOverlay = document.getElementById('privacyOverlay');
+    var privacyBox = document.getElementById('privacyBox');
+    var btnClosePrivacy = document.getElementById('btnClosePrivacy');
+
+    window.openPrivacyModal = function() {
+        privacyOverlay.classList.remove('hidden');
+        setTimeout(function() {
+            privacyOverlay.classList.remove('opacity-0');
+            privacyBox.classList.remove('scale-95');
+            privacyBox.classList.add('scale-100');
+        }, 10);
+    };
+
+    window.closePrivacyModal = function() {
+        privacyOverlay.classList.add('opacity-0');
+        privacyBox.classList.remove('scale-100');
+        privacyBox.classList.add('scale-95');
+        setTimeout(function() {
+            privacyOverlay.classList.add('hidden');
+        }, 300);
+    };
+
+    btnClosePrivacy.addEventListener('click', window.closePrivacyModal);
+    privacyOverlay.addEventListener('click', function(e) {
+        if (e.target === privacyOverlay) { window.closePrivacyModal(); }
+    });
+
+    // ── Cookie Consent Banner ───────────────────
+    var cookieBanner = document.getElementById('cookieBanner');
+
+    window.acceptCookies = function() {
+        localStorage.setItem('jifftry_cookies_accepted', 'true');
+        cookieBanner.classList.add('opacity-0');
+        setTimeout(function() {
+            cookieBanner.classList.add('hidden');
+        }, 300);
+    };
+
+    if (!localStorage.getItem('jifftry_cookies_accepted')) {
+        cookieBanner.classList.remove('hidden');
+    }
 
 })();

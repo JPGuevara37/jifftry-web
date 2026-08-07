@@ -61,3 +61,25 @@ body {
     white-space: nowrap;
     border-width: 0;
 }
+
+#cookieBanner {
+    transition: opacity 0.3s ease-out;
+}
+
+#privacyOverlay .overflow-y-auto::-webkit-scrollbar {
+    width: 4px;
+}
+
+#privacyOverlay .overflow-y-auto::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+}
+
+#privacyOverlay .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: rgba(216, 180, 254, 0.3);
+    border-radius: 2px;
+}
+
+input[type="checkbox"] {
+    accent-color: #d8b4fe;
+}
