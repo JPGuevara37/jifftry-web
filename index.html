@@ -60,73 +60,121 @@
     </section>
 
     <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10" id="planes">
+
         <div class="text-center mb-16 fade-in-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Elige tu Plan</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">O puedes eligir tu Plan</h2>
             <p class="text-slate-400">Planes diseñados para cada etapa de tu exploración comercial.</p>
         </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Plan cards match previous version -->
+
             <div class="glass-card flex flex-col h-full rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up relative border-t-4 border-t-pastel-green group">
                 <div class="absolute top-0 right-0 bg-pastel-green text-space-dark text-xs font-bold px-3 py-1 rounded-bl-lg">PUNTO DE PARTIDA</div>
                 <div class="p-8 border-b border-white/5 relative overflow-hidden shrink-0">
-                    <h3 class="text-2xl font-bold text-white">🚀 Despegue</h3>
-                    <div class="mt-4 flex items-baseline text-4xl font-extrabold text-white">$35<span class="ml-1 text-lg font-medium text-slate-400">/mes</span></div>
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-pastel-green/10 rounded-full blur-2xl group-hover:bg-pastel-green/20 transition-colors"></div>
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                        🚀 Despegue
+                    </h3>
+                    <p class="text-sm text-pastel-green mt-2 font-medium">Starter - Prueba Gratis</p>
+                    <div class="mt-4 flex items-baseline text-4xl font-extrabold text-white">
+                        $35
+                        <span class="ml-1 text-lg font-medium text-slate-400">/mes</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Opción Anual: $350 (2 meses gratis)</p>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
-                    <ul class="space-y-4 text-sm text-slate-300 mb-6 flex-grow">
-                        <li>✦ Catálogo hasta 100 productos</li>
-                        <li>✦ Pedidos directo a WhatsApp</li>
-                        <li>✦ Validación SINPE Móvil</li>
+                    <ul class="space-y-4 text-sm text-slate-300 mb-6">
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Catálogo hasta 100 productos</li>
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Pedidos directo a WhatsApp</li>
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Validación SINPE Móvil</li>
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Subdominio (tunegocio.jifftry.com)</li>
+                        <li class="flex items-start"><span class="text-pastel-green mr-2">✦</span> Soporte en horario laboral</li>
                     </ul>
-                    <button data-plan="Despegue" class="w-full mt-auto bg-white/10 hover:bg-pastel-green hover:text-space-dark text-white py-3 rounded-xl font-semibold transition-all">Empezar Gratis</button>
+                    <div class="bg-space-light/50 p-4 rounded-xl text-xs text-slate-300 border border-white/5 mb-6">
+                        <strong class="text-pastel-green">Tu Misión Inicia Aquí:</strong> Inicias hoy a ₡0. Pruebas todo el sistema por 30 días sin compromisos. Luego, continúas por solo ~₡18.000/mes.
+                    </div>
+                    <button data-plan="Despegue" class="w-full mt-auto bg-white/10 hover:bg-pastel-green hover:text-space-dark text-white border border-white/20 hover:border-pastel-green py-3 rounded-xl font-semibold transition-all">Empezar Gratis</button>
                 </div>
             </div>
 
             <div class="glass-card flex flex-col h-full rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up border-t-4 border-t-pastel-blue group" style="transition-delay: 100ms;">
                 <div class="p-8 border-b border-white/5 relative overflow-hidden shrink-0">
-                    <h3 class="text-2xl font-bold text-white">🛰️ Órbita</h3>
-                    <div class="mt-4 flex items-baseline text-4xl font-extrabold text-white">$59<span class="ml-1 text-lg font-medium text-slate-400">/mes</span></div>
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-pastel-blue/10 rounded-full blur-2xl group-hover:bg-pastel-blue/20 transition-colors"></div>
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                        🛰️ Órbita
+                    </h3>
+                    <p class="text-sm text-pastel-blue mt-2 font-medium">Pro - Escalabilidad</p>
+                    <div class="mt-4 flex items-baseline text-4xl font-extrabold text-white">
+                        $59
+                        <span class="ml-1 text-lg font-medium text-slate-400">/mes</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Opción Anual: $590 (2 meses gratis)</p>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
-                    <ul class="space-y-4 text-sm text-slate-300 mb-6 flex-grow">
-                        <li>✦ Productos ILIMITADOS</li>
-                        <li>✦ Dominio .com propio + SSL</li>
-                        <li>✦ Marca Blanca 100%</li>
+                    <ul class="space-y-4 text-sm text-slate-300 mb-6">
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Productos e inventario ILIMITADOS</li>
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Dominio .com propio + SSL</li>
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Marca Blanca 100%</li>
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Reportes y analítica mensual</li>
+                        <li class="flex items-start"><span class="text-pastel-blue mr-2">✦</span> Soporte prioritario</li>
                     </ul>
-                    <button data-plan="Órbita" class="w-full mt-auto bg-white/10 hover:bg-pastel-blue hover:text-space-dark text-white py-3 rounded-xl font-semibold transition-all">Seleccionar Órbita</button>
+                    <div class="bg-space-light/50 p-4 rounded-xl text-xs text-slate-300 border border-white/5 mb-6">
+                        <strong class="text-pastel-blue">Expansión Inteligente:</strong> Formaliza tu marca con dominio propio y capacidad ilimitada, todo centralizado en una sola cuota accesible.
+                    </div>
+                    <button data-plan="Órbita" class="w-full mt-auto bg-white/10 hover:bg-pastel-blue hover:text-space-dark text-white border border-white/20 hover:border-pastel-blue py-3 rounded-xl font-semibold transition-all">Seleccionar Órbita</button>
                 </div>
             </div>
 
             <div class="glass-card flex flex-col h-full rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up border-t-4 border-t-pastel-purple group" style="transition-delay: 200ms;">
                 <div class="absolute top-0 right-0 bg-pastel-purple text-space-dark text-xs font-bold px-3 py-1 rounded-bl-lg">MÁS POPULAR</div>
                 <div class="p-8 border-b border-white/5 relative overflow-hidden shrink-0">
-                    <h3 class="text-2xl font-bold text-white">🌌 Galaxia</h3>
-                    <div class="mt-4 flex items-baseline text-4xl font-extrabold text-white">$89<span class="ml-1 text-lg font-medium text-slate-400">/mes</span></div>
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-pastel-purple/10 rounded-full blur-2xl group-hover:bg-pastel-purple/20 transition-colors"></div>
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                        🌌 Galaxia
+                    </h3>
+                    <p class="text-sm text-pastel-purple mt-2 font-medium">Business - Automatización</p>
+                    <div class="mt-4 flex items-baseline text-4xl font-extrabold text-white">
+                        $89
+                        <span class="ml-1 text-lg font-medium text-slate-400">/mes</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Opción Anual: $890 (2 meses gratis)</p>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <ul class="space-y-4 text-sm text-slate-300 mb-6 flex-grow">
-                        <li>✦ Todo lo del Plan Órbita</li>
-                        <li>✦ Módulo de facturación</li>
-                        <li>✦ Soporte preferencial 24/7</li>
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> <strong>Todo lo del Plan Órbita</strong></li>
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Módulo de facturación/contable</li>
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Flujos personalizados (Alertas)</li>
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Capacitación inicial (Llamada/Video)</li>
+                        <li class="flex items-start"><span class="text-pastel-purple mr-2">✦</span> Soporte preferencial 24/7</li>
                     </ul>
-                    <button data-plan="Galaxia" class="w-full mt-auto bg-white/10 hover:bg-pastel-purple hover:text-space-dark text-white py-3 rounded-xl font-semibold transition-all">Seleccionar Galaxia</button>
+                    <button data-plan="Galaxia" class="w-full mt-auto bg-white/10 hover:bg-pastel-purple hover:text-space-dark text-white border border-white/20 hover:border-pastel-purple py-3 rounded-xl font-semibold transition-all">Seleccionar Galaxia</button>
                 </div>
             </div>
 
             <div class="glass-card flex flex-col h-full rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 fade-in-up border-t-4 border-t-pastel-pink group" style="transition-delay: 300ms;">
                 <div class="p-8 border-b border-white/5 relative overflow-hidden shrink-0">
-                    <h3 class="text-2xl font-bold text-white">🪐 Titán</h3>
-                    <div class="mt-4 flex items-baseline text-3xl font-extrabold text-white">Cotización</div>
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-pastel-pink/10 rounded-full blur-2xl group-hover:bg-pastel-pink/20 transition-colors"></div>
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                        🪐 Titán
+                    </h3>
+                    <p class="text-sm text-pastel-pink mt-2 font-medium">Enterprise - A Medida</p>
+                    <div class="mt-4 flex items-baseline text-3xl font-extrabold text-white">
+                        Cotización
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Setup + Mantenimiento</p>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <ul class="space-y-4 text-sm text-slate-300 mb-6 flex-grow">
-                        <li>✦ Infraestructura dedicada</li>
-                        <li>✦ Desarrollo personalizado</li>
-                        <li>✦ SLA del 99.9%</li>
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Infraestructura dedicada / VPS</li>
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Desarrollo personalizado (ERP, CRM)</li>
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Arquitectura multi-sucursal</li>
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> SLA de disponibilidad del 99.9%</li>
+                        <li class="flex items-start"><span class="text-pastel-pink mr-2">✦</span> Atención directa con ingeniero</li>
                     </ul>
-                    <button data-plan="Titán" class="w-full mt-auto bg-white/10 hover:bg-pastel-pink hover:text-space-dark text-white py-3 rounded-xl font-semibold transition-all">Contactar Ventas</button>
+                    <button data-plan="Titán" class="w-full mt-auto bg-white/10 hover:bg-pastel-pink hover:text-space-dark text-white border border-white/20 hover:border-pastel-pink py-3 rounded-xl font-semibold transition-all">Contactar Ventas</button>
                 </div>
             </div>
+
         </div>
     </section>
 
