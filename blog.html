@@ -36,12 +36,12 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html">
-                        <img src="img/jifftry-logo.jpg" alt="Jifftry Logo" class="h-14 w-14 rounded-full mix-blend-screen">
+                        <img src="img/jifftry-logo.jpg" alt="Jifftry Logo" class="h-11 w-11 sm:h-14 sm:w-14 rounded-full mix-blend-screen">
                     </a>
                 </div>
-                <div class="flex items-center gap-6">
+                <div class="flex items-center gap-3 sm:gap-6">
                     <a href="index.html" class="text-sm text-slate-400 hover:text-white transition-colors">Inicio</a>
-                    <button id="btnNavModal" data-plan="Interesado" class="bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(216,180,254,0.5)]">
+                    <button id="btnNavModal" data-plan="Interesado" class="bg-gradient-to-r from-pastel-purple to-pastel-blue hover:from-white hover:to-white text-space-dark px-4 sm:px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(216,180,254,0.5)]">
                         Me interesa
                     </button>
                 </div>
@@ -173,13 +173,13 @@
 
     <!-- Contact Modal (Reused) -->
     <div id="modalOverlay" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 backdrop-blur-md">
-        <div id="modalBox" class="bg-space-light border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300 relative">
+        <div id="modalBox" class="bg-space-light border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-md max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300 relative">
             <button id="btnCloseModal" class="absolute top-4 right-4 text-slate-400 hover:text-white focus:outline-none transition-colors">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <div id="formContainer" class="p-8">
+            <div id="formContainer" class="p-6 sm:p-8">
                 <h3 class="text-2xl font-bold text-white mb-2">Inicia tu viaje</h3>
                 <form id="contactForm" class="space-y-4" novalidate>
                     <input type="hidden" id="jiffy_check" name="jiffy_check" value="">
