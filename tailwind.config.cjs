@@ -1,5 +1,6 @@
-tailwind.config = {
+module.exports = {
     darkMode: 'class',
+    content: ['./*.html', './blog/*.html', './js/*.js'],
     theme: {
         extend: {
             fontFamily: {
