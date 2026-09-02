@@ -178,9 +178,11 @@
             submitBtn.disabled = true;
 
             var scriptURL = 'https://script.google.com/macros/s/AKfycbxv6dAon1JGx568-_x1dS0WT3IgjgfybHHyi7KTTm-MhjklwkuIJpPWfxNYet5319jI/exec';
+            var jiffyCheck = document.getElementById('jiffy_check');
             var formData = {
                 nombre: nombre, organizacion: organizacion, telefono: telefono, correo: correo,
                 plan: (planField ? planField.value : 'No especificado') || 'No especificado',
+                jiffy_check: (jiffyCheck ? jiffyCheck.value : '') || '',
                 token: SECURITY_TOKEN, submittedAt: now
             };
 
