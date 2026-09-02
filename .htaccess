@@ -1,0 +1,32 @@
+# Jifftry - Cabeceras de seguridad
+# Requiere Apache/LiteSpeed (Hostinger). Verifica con el test de headers tras subirlo.
+
+<IfModule mod_headers.c>
+
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Strict-Transport-Security "max-age=31536000"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+
+    Header always set Content-Security-Policy "default-src 'none'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src https://script.google.com https://script.googleusercontent.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"
+
+</IfModule>
+
+# Bloquear acceso a archivos sensibles
+<FilesMatch "^(\.env|\.git|\.htaccess|\.htpasswd|composer\.(json|lock)|package(-lock)?\.json|Dockerfile|backup|.*\.(sql|log|bak|old))$">
+    Require all denied
+</FilesMatch>
+
+# Desactivar listado de directorios
+Options -Indexes
+
+# Cache estatica (1 semana para imagenes, 1 dia para css/js)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/svg+xml "access plus 7 days"
+    ExpiresByType image/png "access plus 7 days"
+    ExpiresByType image/jpeg "access plus 7 days"
+    ExpiresByType text/css "access plus 1 day"
+    ExpiresByType application/javascript "access plus 1 day"
+</IfModule>
